@@ -1,0 +1,19 @@
+---
+
+- name: Setup admin machine
+  become: yes
+  remote_user: "{{ remote_user }}"
+  hosts: phpmydamin
+  tasks:
+    - name: Run phpmyadmin in docker
+      docker_container:
+        name: phpmyadmin
+        image: phpmyadmin/phpmyadmin
+        state: started
+        recreate: yes
+        network_mode: "bridge"
+        ports:
+          - "8080:80" 
+        env:
+          PMA_HOST: "{{ pma_host }}"
+          PMA_PORT: "{{ pma_port }}"

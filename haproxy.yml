@@ -1,0 +1,28 @@
+---
+
+- name: Install HAProxy
+  become: yes
+  remote_user: "{{ remote_user}}"
+  hosts: loadbalancers
+  tasks: 
+    - name: Install and configure HAProxy
+      include_role:
+        name: geerlingguy.haproxy
+
+    # - name: Copy HAProxy Enterprise configuration
+    #   copy:
+    #     src: "/home/user/hapee-lb.cfg"
+    #     dest: "/etc/hapee-2.1/hapee-lb.cfg"
+    #     owner: root
+    #     group: hapee
+    #     mode: 0644
+
+    # - name: Check if there are no errors in configuration file
+    #   command: "/opt/hapee-2.1/sbin/hapee-lb -c -f /etc/hapee-2.1/hapee-lb.cfg"
+    #   register: hapee_check
+
+    # - name: Reload HAProxy Enterprise if the check passed
+    #   service:
+    #     name: hapee-2.1-lb
+    #     state: reloaded
+    #   when: hapee_check is success and not ansible_check_mode

@@ -1,0 +1,10 @@
+---
+
+- name: MariaDB and Galera cluster
+  become: yes
+  remote_user: "{{ remote_user}}"
+  hosts: mariadb_cluster
+  tasks: 
+    - name: Install MariaDB and Galera
+      include_role:
+        name: ansible-mariadb-galera-cluster

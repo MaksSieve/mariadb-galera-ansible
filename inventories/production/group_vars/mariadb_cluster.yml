@@ -1,0 +1,17 @@
+---
+
+galera_cluster_nodes_group: mariadb_cluster
+galera_cluster_name: sieve-test-cluster
+mariadb_mysql_users:
+- name: admin
+  hosts:
+    - "%"
+  password: "$LGg5}Lv+&rGS*bt"
+  priv: "*.*:ALL,GRANT"
+  append_privs: yes
+- name: user
+  hosts:
+    - "%"
+  priv: "*.*:ALL"
+  password: "~Rj2m8~;G.Tn?FPv"
+  append_privs: yes 

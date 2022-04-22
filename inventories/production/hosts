@@ -1,0 +1,10 @@
+[mariadb_cluster]
+galera-01.updemo.de
+galera-02.updemo.de
+galera-03.updemo.de
+
+[phpmyadmin]
+galera-lb-01.updemo.de
+
+[loadbalancers]
+galera-lb-01.updemo.de

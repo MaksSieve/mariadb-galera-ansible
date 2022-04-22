@@ -1,0 +1,13 @@
+---
+
+- name: ansible-mariadb-galera-cluster
+  src: https://github.com/mrlesmithjr/ansible-mariadb-galera-cluster
+  version: master
+
+- name: geerlingguy.docker
+  src: https://github.com/geerlingguy/ansible-role-docker
+  version: "4.2.2"
+
+- name: geerlingguy.haproxy
+  src: https://github.com/MaksSieve/ansible-role-haproxy
+  version: "master"

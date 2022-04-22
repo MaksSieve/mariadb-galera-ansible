@@ -1,0 +1,2 @@
+pma_host: galera-01.updemo.de
+pma_port: "3306"

@@ -1,0 +1,15 @@
+haproxy_backend_servers:
+  - name: mariadb-01
+    address: galera-01.updemo.de:3306
+    weight: 100
+  - name: mariadb-02
+    address: galera-02.updemo.de:3306
+    weight: 100
+  - name: mariadb-03
+    address: galera-03.updemo.de:3306
+    weight: 100
+
+haproxy_backend_balance_method: 'leastconn'
+haproxy_frontend_port: "3306"
+haproxy_backend_mode: 'tcp'
+haproxy_frontend_bind_address: '*'
